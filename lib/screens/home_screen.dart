@@ -1,6 +1,8 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/styles/app_styles.dart';
+import 'package:ticket_app/base/widgets/app_double_text.dart';
+import 'package:ticket_app/base/widgets/ticket_view.dart';
 
 import '../base/res/media.dart';
 
@@ -10,8 +12,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppStyles.bgColor,
       body: ListView(
         children: [
+          SizedBox(height: 40,),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -51,20 +55,24 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                        color: const Color(0x0ff4f6fd),
+                        color: const Color(0xfff4f6fd),
                       ),
                       child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Icon(FluentSystemIcons.ic_fluent_search_regular, color: Color(0xFFBFC205),),
-                          Text("Search icon")],
+                          Text("Search")],
                       ),
                     ),
+                    SizedBox(height: 40,),
+                    AppDoubleText(bigText: 'Upcoming Flights', smallText: 'View all',),
+                    TicketView()
                   ],
                 ),
               ],
             ),
           ),
+
         ],
       ),
     );
